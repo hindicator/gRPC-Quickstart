@@ -5,17 +5,16 @@ package userPackage;
 /* Define object methods */
 service Users {
     rpc addUser (User) returns (User);
-    rpc getUsers (void) returns (getAllUsers);
+    rpc getUsers (no_params) returns (getAllUsers);
 }
 /* Define user attributes */
 message User {
     int32 id = 1;
     string name = 2;
-    int32 age = 3;
-    string password = 4;
+    string password = 3;
 }
 message getAllUsers {
     /* repeated needed for protocol buffer */
     repeated User users = 1;
 }
-message void {}
+message no_params {}

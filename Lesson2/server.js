@@ -14,19 +14,34 @@ server.addService(userPackage.Users.service, {
   getUsers: getUsers,
 });
 server.bindAsync(
-  "0.0.0.0:4045",
+  "0.0.0.0:4040",
   grpc.ServerCredentials.createInsecure(),
   () => {
     server.start();
   }
 );
 
+const users = [];
+
 function addUser(call, callback) {
-  console.log(call);
+  const newUser = {
+    id: users.length + 1,
+    name: call.request.name,
+    password: call.request.password,
+  };
+  users.push(newUser);
+  console.log(newUser);
+
+  callback(null, newUser);
 }
 function getUsers(call, callback) {
-  console.log(call);
+  const data = {
+    users: users,
+  };
+  callback(null, data);
 }
+
+console.log("Server running on localhost:4040");
 // const addUser = (call, callback) => {
 //   console.log("a");
 // };
