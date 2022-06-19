@@ -1,17 +1,10 @@
 # gRPC Tutorial
 
-- ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `#f03c15`
-
 ```diff
-- Please note :
-
+-Please note :
+protobuf Version v21 (current latest) has BUGS with javascript,
+Consider using protoc version 3.15.7 and below.
 ```
-<div style="font-size: 18px;">
-<span style="color: red;">Please note :</span> protobuf Version v21 (current latest) has <b>bugs</b> with javascript,
-
-please consider using protoc version <b>3.15.7 and below</b>.
-
-</div>
 
 <br>
 
