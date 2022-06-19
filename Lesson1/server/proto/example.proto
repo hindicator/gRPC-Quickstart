@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package ExamplePack;
+
+service Users {
+    rpc createUser (User) returns (User);
+    rpc readUsers (void) returns (getUsers);
+}
+
+message User {
+    int32 id = 1;
+    int32 age = 2;
+    string name = 3;
+    string salary = 4;
+}
+message getUsers {
+    repeated User user = 1;
+}
+message void {}
+
+
+
+// message UserRequest {
+// }
+// message UserResponse {
+// }
+
+// service UserService {
+//     rpc User(UserRequest) returns (UserResponse) {};
+// }
